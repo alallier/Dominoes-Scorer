@@ -19,7 +19,8 @@
   },
   "devDependencies": {
     "jshint": "*",
-    "supervisor": "*"
+    "supervisor": "*",
+    "reload": "*"
   },
   "rooseveltConfig": {
     "port": 43711,
@@ -81,8 +82,8 @@
   },
   "scripts": {
     "start": "npm run prod",
-    "prod": "supervisor -e js,json,less,html --ignore statics/.build/ --ignore public/ -- app.js -prod",
-    "dev": "supervisor -e js,json,less,html --ignore statics/.build/ --ignore public/ -- app.js -dev",
+    "prod": "supervisor -k -e js,json,less,html -i statics/.build/,public/ -- app.js -prod",
+    "dev": "supervisor -k -e js,json,less,html -i statics/.build/,public/ -- app.js -dev",
     "test": "jshint app.js"
   }
 }

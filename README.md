@@ -5,7 +5,7 @@ Introduction
 
 A web-app that auto scores the game of chicken foot dominoes. See this [article](https://en.wikipedia.org/wiki/Chicken_foot_\(game\)) for more information on the game.
 
-The following servers as an outline/guide of what we want to implement for the game. Any recommendations are welcomed anytime. Open an issue.
+The following serves as an outline/guide of what we want to implement for the game. Any recommendations are welcomed anytime. Open an issue.
 
 This application is already written in perl and cgi's and can be found [here](dominoes.alexanderlallier.com).
 
@@ -33,12 +33,12 @@ Advanced feature list:
  * Different game modes (like quick play, guest play, and arcade play)
  * Unique users with unique login and password to keep track of stats
  * Group* logins to allow users who play as a group not be required to have to login each player one by one
- * Allow a guest player to play in any mode at anytime and not have their stats be saved in the database
+ * Allow a guest player to play in any mode at any time and not have their stats be saved in the database
  
 Extreme feature list:
 
  * Allows games to temporarily be saved in the database, so that way you can come back to a game in progress (probably up to 2 days later)
- * Research and implement different types of dominoe games other than just chicken foot dominoes
+ * Research and implement different types of dominoes games other than just chicken foot dominoes
  
 Outline/Discussion
 ---
@@ -56,7 +56,7 @@ After all rounds from a game are filled in, we automatically ask the user once i
 Implementation
 ---
 
-This documentation does not talk about implementation for obvious reasons we don't want to restrict the ideas by constricting ourselves to certains pieces of software....but
+This documentation does not talk about implementation for obvious reasons we don't want to restrict the ideas by constricting ourselves to certain pieces of software....but
 
 The following are some ideas of software we would like to use in the app
 
@@ -67,7 +67,14 @@ The following are some ideas of software we would like to use in the app
 Contribution
 ---
 
-Comin soon.
+ 1. Fork the repo
+ 2. Make sure to have [Node.js](https://nodejs.org/en/) installed (we are developing the stable release V5.2.0 and up)
+ 3. Pick a feature or issue you would like to work on. (Notifying  us what featuring you're working on, at least in the early stages until the repo becomes mature would be best)
+ 
+ * Submit PRs and issues
+ * We are welcome to ideas and improvements
+
+
 ```
 *Groups are a set of people who normally play together. So if the same 4 people always play together they have the option to create a group and add their people to the group. The benefit of a group is that it allows one login, instead of 4. This does allow a user to not be present but be logged in so it relies on the trust of the people in the group.
 ```
