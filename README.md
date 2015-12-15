@@ -24,7 +24,7 @@ Basic feature list:
 Intermediate feature list:
 
  * Allow different dominoes size sets (like 6,9,16)
- * Upcoming round shown on table page but instead with dominoes photo instead of number
+ * Upcoming round shown on table page but instead with dominoe's photo instead of number
  * Dark/Light theme choice
 
 Advanced feature list:
@@ -32,7 +32,7 @@ Advanced feature list:
  * Database integration
  * Different game modes (like quick play, guest play, and arcade play)
  * Unique users with unique login and password to keep track of stats
- * Group* logins to allow users who play as a group not be required to have to login each player one by one
+ * Group[*](https://github.com/alallier/Dominoes-Scorer#groups) logins to allow users who play as a group not be required to have to login each player one by one
  * Allow a guest player to play in any mode at any time and not have their stats be saved in the database
  
 Extreme feature list:
@@ -47,7 +47,7 @@ I envision the app like this. You enter the site through a homepage, which will 
 
 Once the user selects start game it will be routed accordingly
 
- 1. If they selected to play arcade mode (scoring mode) then they are sent to a page so they can login as a unique player or as a group. Groups* will have their own username and password. Not everyone that is in the group has to play. For example if 5 people are normally in a group and one person is not there, they have the option to deselect that user from playing.
+ 1. If they selected to play arcade mode (scoring mode) then they are sent to a page so they can login as a unique player or as a group. Groups[*](https://github.com/alallier/Dominoes-Scorer#groups) will have their own username and password. Not everyone that is in the group has to play. For example if 5 people are normally in a group and one person is not there, they have the option to deselect that user from playing.
  2. If they select quick play, they are routed to the table to begin their game. We do not store a temp session for their game, or any stats from the game.
  3. At any time a guest player can play in any of these game modes (quick play, arcade, or group arcade)
 
@@ -63,18 +63,25 @@ The following are some ideas of software we would like to use in the app
  * [Node.js](https://nodejs.org/en/)
  * [Roosevelt MVC web framework for Node.js](https://github.com/kethinov/roosevelt) or [Ember.js](http://emberjs.com/)
  * [PostgreSQL](http://www.postgresql.org/)
+ * [Passport](http://passportjs.org/)
 
 Contribution
 ---
 
  1. Fork the repo
- 2. Make sure to have [Node.js](https://nodejs.org/en/) installed (we are developing the stable release V5.2.0 and up)
+ 2. Install [Node.js](https://nodejs.org/en/) (we are developing the stable release V5.2.0 and up)
+ 3. Run `npm install` command in the directory you forked too
  3. Pick a feature or issue you would like to work on. (Notifying  us what featuring you're working on, at least in the early stages until the repo becomes mature would be best)
+ 4. Run the server with the command `npm run dev`
+ 5. Visit (localhost:43711)
  
  * Submit PRs and issues
  * We are welcome to ideas and improvements
 
+Footnotes
+---
 
-```
-*Groups are a set of people who normally play together. So if the same 4 people always play together they have the option to create a group and add their people to the group. The benefit of a group is that it allows one login, instead of 4. This does allow a user to not be present but be logged in so it relies on the trust of the people in the group.
-```
+### Groups* ###
+
+
+Groups are a set of people who normally play together. So if the same 4 people always play together they have the option to create a group and add their people to the group. The benefit of a group is that it allows one login, instead of 4. This does allow a user to not be present but be logged in so it relies on the trust of the people in the group.

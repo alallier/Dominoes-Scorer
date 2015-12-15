@@ -1,9 +1,11 @@
 <include src='layouts/main'>
   <arg pageContent>
     <article>
-      <p>{content.hello}</p>
-      <p>{content.picLabel}</p>
-      <p><img src='{teddyPath}' alt=''>
+      <p>{pageDescription}</p>
+			<loop through='gameModes' key='i' val='item'>
+				<a href="{item.link}">{item.title}</a>
+				<br>
+			</loop>
     </article>
   </arg>
 </include>

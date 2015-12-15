@@ -1,10 +1,10 @@
 module.exports = function(app) {
   app.route('/').get(function(req, res) {
     var model = require('models/global')(req, res);
-    model.content.pageTitle = '{content.appTitle} - Homepage';
-    model.content.hello = 'Hi! I\'m a variable trickling down through the MVC structure!';
-    model.content.picLabel = 'Here\'s a silly picture of Teddy Roosevelt:';
-    model.teddyPath = '/images/teddy.jpg';
-    res.render('homepage', model);
+		model.content.pageTitle = '{content.appTitle}'
+		model.gameModes = require('models/getGameModes')();
+		model.pageDescription = "Welcome to the automatic Chicken Foot Dominoes scoring app. Please chose a game mode below";
+		console.log(model.gameModes[0].title);
+		res.render('homepage', model);
   });
 };

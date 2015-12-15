@@ -1,0 +1,15 @@
+// extend global model provide additional useful vars at runtime and export it
+module.exports = function() {
+	var gameModes = [
+		{
+			title: 'Quick Play',
+			link: '/quickPlay'
+		},
+		{
+			title: 'Arcade Play',
+			link: '/arcadePlay'
+		}
+	];
+	return gameModes;
+};
+
