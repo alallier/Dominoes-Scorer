@@ -3,11 +3,11 @@ module.exports = function() {
 	var gameModes = [
 		{
 			title: 'Quick Play',
-			link: '/quickPlay'
+			link: '/quickPlayMode'
 		},
 		{
 			title: 'Arcade Play',
-			link: '/arcadePlay'
+			link: '/arcadePlayMode'
 		}
 	];
 	return gameModes;
