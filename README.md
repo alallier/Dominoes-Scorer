@@ -69,11 +69,11 @@ Contribution
 ---
 
  1. Fork the repo
- 2. Install [Node.js](https://nodejs.org/en/) (we are developing the stable release V5.2.0 and up)
+ 2. Install [Node.js](https://nodejs.org/en/) (we are developing the stable release v5 and up)
  3. Run `npm install` command in the directory you forked too
  3. Pick a feature or issue you would like to work on. (Notifying  us what featuring you're working on, at least in the early stages until the repo becomes mature would be best)
  4. Run the server with the command `npm run dev`
- 5. Visit (localhost:43711)
+ 5. Visit [localhost:43711](localhost:43711)
  
  * Submit PRs and issues
  * We are welcome to ideas and improvements
