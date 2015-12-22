@@ -43,3 +43,55 @@ if (arcadePlayForm) {
   arcadePlayForm.appendChild(select);
 }
 ///
+
+// Table code
+///
+
+//This if check is temporary fix, it needs a better solution
+if (window.location.href === "http://localhost:43711/getPlayersNames") {
+  var nubmerOfPlayers = document.getElementById('nubmerOfPlayers').value;
+
+  // Add event listeners to all input elements
+  for (i = 0; i <= 9; i++) {
+    for (j = 0; j < nubmerOfPlayers; j++) {
+      test = ['player' + j + 'Round' + i];
+      if (test) {
+        test = document.getElementById(test).addEventListener('input', sumValues);
+      }
+    }
+  }
+
+  // Sum values of columns one a time, so to have seperate scores
+  function sumValues() {
+
+    // Nested for loops to go through the players and 10 rounds for each player
+    for (j = 0; j < nubmerOfPlayers; j++) {
+
+      // Reset total before going into each column
+      total = 0;
+      for (i = 0; i <= 9; i++) {
+
+        // Concatinate scoreTextElement before hand so we can loop through unique IDs
+        scoreTextElement = ['player' + j + 'Round' + i];
+
+        // Get a value from each input down a column
+        value = Number(document.getElementById(scoreTextElement).value);
+
+        total += value;
+
+        // Get the finalScorePlayer element uniquly
+        finalScore = ['finalScorePlayer' + j];
+        finalScore = document.getElementById(finalScore)
+
+        // Empty finalScorePlayer element so we can rewrite it
+        finalScore.textContent = '';
+        finalScore.innerHTML = '',
+
+        // Append new total to finalScorePlayer
+        node = document.createTextNode(total);
+        finalScore.appendChild(node);
+      }
+    }
+  }
+}
+///

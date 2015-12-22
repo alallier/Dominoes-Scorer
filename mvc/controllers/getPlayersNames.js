@@ -6,12 +6,14 @@ module.exports = function(app) {
     
     model.numberOfPlayers = req.body.numberOfPlayers[0];
     model.playersNamesArray = [];
+    model.playersCountArray = [];
     model.rounds = [];
     model.pageDescription = 'Welcome to the table';
 
     // Save each players name from form to playersNamesArray
     for (i = 0; i < model.numberOfPlayers; i++) {
       model.playersNamesArray.push(req.body['playerName' + i]);
+      model.playersCountArray.push(i);
     }
 
     // Create the rounds and save them to rounds

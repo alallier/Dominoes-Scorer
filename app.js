@@ -3,7 +3,7 @@ app = require('roosevelt')({
       var reload = require('reload'),
           bodyParser = require('body-parser');
 			
-      reload(app.httpServer, app, 350, true);
+      reload(app.httpServer, app);
 			
       // Body Parser Setup
       app.use( bodyParser.json() );       // to support JSON-encoded bodies

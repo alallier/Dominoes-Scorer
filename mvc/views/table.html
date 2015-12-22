@@ -15,25 +15,26 @@
           <loop through='rounds' val='round'>
             <tr>
               <td>{round}</td>
-              <loop through='playersNamesArray' val='player'>
-                <td><input type="text" name="player{player}Round{round}"></td>
+              <loop through='playersNamesArray' key='i' val='player'>
+                <td><input type='number' name='player{i}Round{round}' id='player{i}Round{round}' min='0' max='300'></td>
               </loop>
-              <td><input type="checkbox" name="vehicle" value="Car"></td>
-              <td><input type="checkbox" name="vehicle" value="Car"></td>
+              <td><input type="checkbox" name="hideScore" value="true"></td>
+              <td><input type="checkbox" name="submitRound" value="true"></td>
             </tr>
           </loop>
         </tbody>
         <tfoot>
           <tr>
             <td>Final Score</td>
-            <loop through='playersNamesArray' val='player'>
-              <td></td>
+            <loop through='playersCountArray' val='count'>
+              <td id='finalScorePlayer{count}'>0</td>
             </loop>
-            <td><input type="checkbox" name="vehicle" value="Car"></td>
-            <td><input type="checkbox" name="vehicle" value="Car"></td>
+            <td><input type="checkbox" name="hideScore" value="true"></td>
+            <td><input type="checkbox" name="submitRound" value="true"></td>
           </tr>
         </tfoot>
       </table>
+      <input type='hidden' id='nubmerOfPlayers' value='{numberOfPlayers}'>
     </article>
   </arg>
 </include>
