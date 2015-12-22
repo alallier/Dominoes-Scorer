@@ -7,14 +7,15 @@
       </form>
       <if numberOfPlayers>
         <p>Number of players: {numberOfPlayers}</p>
+        <form action='/getPlayersNames' method='post' name='quickPlayersNames'>
+          <loop through='numberOfPlayersArray' val='number'>
+            <input type='text' name='playerName{number}'>
+            <input type='hidden' name='numberOfPlayers' value='{numberOfPlayers}'> 
+            <br><br>
+          </loop>
+          <input type='submit' value='Enter'><br>
+        </form>
       </if>
-      <form action='' method='post' name='arcadePlayersNames'>
-        <loop through='numberOfPlayersArray' val='number'>
-          <input type='text' name='playerName{number}'>
-          <br><br>
-        </loop>
-        <input type='submit' value='Enter'><br>
-      </form>
     </article>
   </arg>
 </include>

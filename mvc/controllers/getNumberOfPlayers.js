@@ -25,7 +25,7 @@ module.exports = function(app) {
       model.numberOfPlayersArray.push(i);
     }
     
-    model.pageDescription = 'Select the number of players below, login below and start playing.';
+    model.pageDescription = 'Select the number of players below and start playing.';
     res.render('quickPlayMode', model);
   });
 };
