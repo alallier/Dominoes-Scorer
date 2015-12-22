@@ -1,0 +1,39 @@
+<include src='layouts/main'>
+  <arg pageContent>
+    <article>
+      <p>{pageDescription}</p>
+      <table>
+        <thead>
+          <th>Round</th>
+          <loop through='playersNamesArray' val='player'>
+            <th>{player}</th>
+          </loop>
+          <th>Hide Score</th>
+          <th>Submit Round</th>
+        </thead>
+        <tbody>
+          <loop through='rounds' val='round'>
+            <tr>
+              <td>{round}</td>
+              <loop through='playersNamesArray' val='player'>
+                <td><input type="text" name="player{player}Round{round}"></td>
+              </loop>
+              <td><input type="checkbox" name="vehicle" value="Car"></td>
+              <td><input type="checkbox" name="vehicle" value="Car"></td>
+            </tr>
+          </loop>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td>Final Score</td>
+            <loop through='playersNamesArray' val='player'>
+              <td></td>
+            </loop>
+            <td><input type="checkbox" name="vehicle" value="Car"></td>
+            <td><input type="checkbox" name="vehicle" value="Car"></td>
+          </tr>
+        </tfoot>
+      </table>
+    </article>
+  </arg>
+</include>

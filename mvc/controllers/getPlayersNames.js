@@ -2,22 +2,24 @@
 module.exports = function(app) {
   app.post('/getPlayersNames', function(req, res) {
     var model = require('models/global')(req, res),
-        i,
-        j;
+        i;
     
     model.numberOfPlayers = req.body.numberOfPlayers[0];
     model.playersNamesArray = [];
-    
-    console.log(req.body.playerName0)
-    
-    console.log(model.numberOfPlayers);
-    
+    model.rounds = [];
+    model.pageDescription = 'Welcome to the table';
+
+    // Save each players name from form to playersNamesArray
     for (i = 0; i < model.numberOfPlayers; i++) {
-      j = i.toString()
-      console.log(req.body.playerName0 + j);
-      model.playersNamesArray.push(req.body['playerName' + j]);
+      model.playersNamesArray.push(req.body['playerName' + i]);
     }
 
-    console.log(model.playersNamesArray);
+    // Create the rounds and save them to rounds
+    for (i = 0; i < 10; i++) {
+      model.rounds.push(i);
+    }
+    
+    // Now that we have the names we send to the table.
+    res.render('table', model);
   });
 };

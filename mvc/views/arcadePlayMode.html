@@ -7,9 +7,10 @@
       </form>
       <if numberOfPlayers>
         <p>Number of players: {numberOfPlayers}</p>
-        <form action='' method='post' name='arcadePlayersNames'>
+        <form action='/getPlayersNames' method='post' name='arcadePlayersNames'>
           <loop through='numberOfPlayersArray' val='number'>
             <input type='text' name='playerName{number}'>
+            <input type='hidden' name='numberOfPlayers' value='{numberOfPlayers}'> 
             <br><br>
           </loop>
           <input type='submit' value='Enter'><br>
