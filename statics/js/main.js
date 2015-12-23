@@ -47,6 +47,7 @@ if (arcadePlayForm) {
 // Table code
 ///
 
+// Automatic Scoring Below
 //This if check is temporary fix, it needs a better solution
 if (window.location.href === "http://localhost:43711/getPlayersNames") {
   var nubmerOfPlayers = document.getElementById('nubmerOfPlayers').value;
@@ -92,6 +93,14 @@ if (window.location.href === "http://localhost:43711/getPlayersNames") {
         finalScore.appendChild(node);
       }
     }
+  }
+  
+  // Ask the user before they close or refresh the page, so they don't lose their score
+  nodeEnv = document.getElementById('NODE_ENV').value;
+
+  window.onbeforeunload = function() {
+    // Check to see if we are in dev mode, if so turn off this feature so it doesn't constantly pop up and annoy us and also hinder the auto reload.
+    nodeEnv ? /* */ : return 'Refreshing the page will cause you to lose your score';
   }
 }
 ///
