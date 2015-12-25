@@ -4,6 +4,10 @@ module.exports = function(app) {
     var model = require('models/global')(req, res),
         i;
     
+    // Since this is recursive we have to send the player count and size again
+    model.playerCount = require('models/getPlayerCount')();
+    model.size = model.playerCount.length;
+    
     model.numberOfPlayers = req.body.numberOfPlayers;
     model.numberOfPlayersArray = [];
     
@@ -17,6 +21,10 @@ module.exports = function(app) {
   app.post('/quickPlayMode', function(req, res) {
     var model = require('models/global')(req, res),
         i;
+    
+    // Since this is recursive we have to send the player count and size again
+    model.playerCount = require('models/getPlayerCount')();
+    model.size = model.playerCount.length;
     
     model.numberOfPlayers = req.body.numberOfPlayers;
     model.numberOfPlayersArray = [];
