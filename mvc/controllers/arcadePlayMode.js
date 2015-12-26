@@ -3,6 +3,7 @@ module.exports = function(app) {
     var model = require('models/global')(req, res);
     
     model.playerCount = require('models/getPlayerCount')();
+    model.dominoSetSize = require('models/getDominoSetSize')();
 
     // Send size for select box size attribute, so that it doesnt display drop down
     model.size = model.playerCount.length;

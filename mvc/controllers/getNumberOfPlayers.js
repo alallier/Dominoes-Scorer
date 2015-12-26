@@ -4,12 +4,15 @@ module.exports = function(app) {
     var model = require('models/global')(req, res),
         i;
     
-    // Since this is recursive we have to send the player count and size again
+    // Since this is recursive we have to send the item found on the original page again
     model.playerCount = require('models/getPlayerCount')();
     model.size = model.playerCount.length;
+    model.dominoSetSize = require('models/getDominoSetSize')();
     
     model.numberOfPlayers = req.body.numberOfPlayers;
     model.numberOfPlayersArray = [];
+    
+    model.dominoSetSizePost = req.body.dominoSetSize;
     
     for (i = 0; i < model.numberOfPlayers; i++) {
       model.numberOfPlayersArray.push(i);
@@ -22,12 +25,15 @@ module.exports = function(app) {
     var model = require('models/global')(req, res),
         i;
     
-    // Since this is recursive we have to send the player count and size again
+    // Since this is recursive we have to send the item found on the original page again
     model.playerCount = require('models/getPlayerCount')();
     model.size = model.playerCount.length;
+    model.dominoSetSize = require('models/getDominoSetSize')()
     
     model.numberOfPlayers = req.body.numberOfPlayers;
     model.numberOfPlayersArray = [];
+    
+    model.dominoSetSizePost = req.body.dominoSetSize;
     
     for (i = 0; i < model.numberOfPlayers; i++) {
       model.numberOfPlayersArray.push(i);

@@ -5,6 +5,7 @@ module.exports = function(app) {
         i;
     
     model.numberOfPlayers = req.body.numberOfPlayers[0];
+    model.dominoSetSize = req.body.dominoSetSize[0];
     model.playersNamesArray = [];
     model.playersCountArray = [];
     model.rounds = [];
@@ -16,8 +17,9 @@ module.exports = function(app) {
       model.playersCountArray.push(i);
     }
 
+    console.log(model.dominoSetSize)
     // Create the rounds and save them to rounds
-    for (i = 0; i < 10; i++) {
+    for (i = 0; i <= model.dominoSetSize; i++) {
       model.rounds.push(i);
     }
     

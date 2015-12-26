@@ -8,6 +8,11 @@
             <option value='{count}'>{count}</option>
           </loop>
         </select>
+        <select name='dominoSetSize'>
+          <loop through='dominoSetSize' key='i' val='item'>
+            <option value='{item.size}'>{item.title}</option>
+          </loop>
+        </select>
         <input type='submit' value='Enter'><br>
       </form>
       <if numberOfPlayers>
@@ -15,7 +20,8 @@
         <form action='/getPlayersNames' method='post' name='quickPlayersNames'>
           <loop through='numberOfPlayersArray' val='number'>
             <input type='text' name='playerName{number}'>
-            <input type='hidden' name='numberOfPlayers' value='{numberOfPlayers}'> 
+            <input type='hidden' name='numberOfPlayers' value='{numberOfPlayers}'>
+            <input type='hidden' name='dominoSetSize' value='{dominoSetSizePost}'>
             <br><br>
           </loop>
           <input type='submit' value='Enter'><br>
