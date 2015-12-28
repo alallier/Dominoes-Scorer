@@ -6,17 +6,78 @@ document.body.style.backgroundColor = '#eee';
 
 // Automatic Scoring Below
 //This if check is temporary fix, it needs a better solution
-if (window.location.href === "http://localhost:43711/getPlayersNames") {
+if (window.location.href === 'http://localhost:43711/getPlayersNames') {
   // Event listener to listen all clicks on the page. (Right now handling hideScore and submitRound checkboxes).
   document.addEventListener('click', function (e) {
-    var checkingHideScore = '';
+    var checkingHideScore = '',
+        checkingFinal = '';
 
     // Split the target element so we can check to see what was clicked.
     hideScoreSplit = e.target.id.split('');
-    
+
     // Check to see if hide score check box before going any further. NOTE this is all dependent on id of elements on screen, so be very careful when changing ids in the HTML.
     for (i = 0; i < 4; i++) {
       checkingHideScore += hideScoreSplit[i];
+    }
+
+    // Check to see if final score check box before going any further
+    for (i = 0; i < 5; i++) {
+      checkingFinal += hideScoreSplit[i];
+    }
+
+    // Check if the click action was in the final score round.
+    if (checkingFinal === 'final') {
+
+      // Clicking a checkbox that is unchecked.
+      if (e.target.value === 'false') {
+        for (j = 0; j < nubmerOfPlayers; j++) {
+
+          // Dynamically populate the oldParagraphName and newParagraphName.
+          oldParagraphName = ['finalScorePlayer' + j];
+          newParagraphName = ['finalScorePlayer' + j + 'paragraph'];
+
+          // Get the score paragraph and parent
+          oldParagraph = document.getElementById(oldParagraphName);
+          oldParagraphParentNode = document.getElementById(oldParagraphName).parentNode;
+
+          // Hide the score paragraph and set the check box value to true (checked). 
+          oldParagraph.style.display = 'none';
+          e.target.setAttribute('value', 'true');
+
+          // Create a paragrpah to hold hidden and give it unquie dynamically created id made from above.
+          paragraph = document.createElement('p');
+          paragraph.setAttribute('id', newParagraphName);
+
+          // Creat a text node and give it the value of hidden.
+          node = document.createTextNode('Hidden');
+
+          // Append the node containing hidden to the new paragraph and append that paragraph to the textbox parent (which is the table data tag. Thus replacing the final score paragraph with the words hidden).
+          paragraph.appendChild(node);
+          oldParagraphParentNode.appendChild(paragraph);
+        }
+      }
+      else {
+
+        // Clicking a checkbox that is checked already.
+        for (j = 0; j < nubmerOfPlayers; j++) {
+
+          // Dynamically populate the oldParagraphName and newParagraphName.
+          oldParagraphName = ['finalScorePlayer' + j];
+          newParagraphName = ['finalScorePlayer' + j + 'paragraph'];
+
+          // Get the old paragraph, new paragraph, and the parent of both input element and parent.
+          oldParagraph = document.getElementById(oldParagraphName);
+          paragraph = document.getElementById(newParagraphName);
+          oldParagraphParentNode = document.getElementById(oldParagraphName).parentNode;
+
+          // Unhide the score paragraph and set the check box value to false (unchecked).
+          oldParagraph.style.display = 'inline';
+          e.target.setAttribute('value', 'false');
+
+          // Remove the paragraph containing hidden.
+          oldParagraphParentNode.removeChild(paragraph);
+        }
+      }
     }
 
     // If we click a hideScore check box we process this below.
@@ -26,7 +87,7 @@ if (window.location.href === "http://localhost:43711/getPlayersNames") {
       round = hideScoreSplit[9];
 
       // Clicking a checkbox that is unchecked.
-      if (e.target.value === "false") {
+      if (e.target.value === 'false') {
         for (j = 0; j < nubmerOfPlayers; j++) {
 
           // Dynamically populate the textBoxName and paragraphName.
@@ -38,19 +99,19 @@ if (window.location.href === "http://localhost:43711/getPlayersNames") {
           textBoxParentNode = document.getElementById(textBoxName).parentNode;
 
           // Set the input type to hidden and it's value to true. Thus hiding the input box and setting the check box value to true (checked state).
-          textBox.setAttribute("type", "hidden");
-          e.target.setAttribute("value", "true");
+          textBox.setAttribute('type', 'hidden');
+          e.target.setAttribute('value', 'true');
 
-          // Create a paragrpah to hold hidden and give it unquie dunamically created id made from above.
-          paragraph = document.createElement("p");
-          paragraph.setAttribute("id", paragraphName);
+          // Create a paragrpah to hold hidden and give it unquie dynamically created id made from above.
+          paragraph = document.createElement('p');
+          paragraph.setAttribute('id', paragraphName);
 
           // Creat a text node and give it the value of hidden.
-          node = document.createTextNode("Hidden");
+          node = document.createTextNode('Hidden');
 
           // Append the node containing hidden to the paragraph and append that paragraph to the textbox parent (which is the table data tag. Thus replacing the input box with the words hidden).
           paragraph.appendChild(node);
-          textBoxParentNode.appendChild(paragraph);
+          textBoxParentNode.removeChild(textBoxName);
         }
       }
       // Clicking a checkbox that is checked already.
@@ -67,8 +128,8 @@ if (window.location.href === "http://localhost:43711/getPlayersNames") {
           paragraph = document.getElementById(paragraphName);
 
           // Set the input type to text and it's value to false. Thus re-shwoing the input box and setting the check box value to false (unchecked state).
-          textBox.setAttribute("type", "text");
-          e.target.setAttribute("value", "false");
+          textBox.setAttribute('type', 'text');
+          e.target.setAttribute('value', 'false');
 
           // Remove the paragraph so only the text input remains.
           textBoxParentNode.removeChild(paragraph);

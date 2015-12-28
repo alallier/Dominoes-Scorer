@@ -18,8 +18,8 @@
               <loop through='playersNamesArray' key='i' val='player'>
                 <td><input type='number' name='player{i}Round{round}' id='player{i}Round{round}' min='0' max='300'></td>
               </loop>
-              <td><input type="checkbox" id='hideScore{round}' value="false"></td>
-              <td><input type="checkbox" id='submitRound{round}' value="false"></td>
+              <td><input type='checkbox' id='hideScore{round}' value='false'></td>
+              <td><input type='checkbox' id='submitRound{round}' value='false'></td>
             </tr>
           </loop>
         </tbody>
@@ -27,10 +27,10 @@
           <tr>
             <td>Final Score</td>
             <loop through='playersCountArray' val='count'>
-              <td id='finalScorePlayer{count}'>0</td>
+              <td><p id='finalScorePlayer{count}'>0</p></td>
             </loop>
-            <td><input type="checkbox" name="hideScore" value="true"></td>
-            <td><input type="checkbox" name="submitRound" value="true"></td>
+            <td><input type='checkbox' id='finalHideScore' value='false'></td>
+            <td><input type='checkbox' name='submitRound' value='true'></td>
           </tr>
         </tfoot>
       </table>
