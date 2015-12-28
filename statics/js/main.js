@@ -111,7 +111,7 @@ if (window.location.href === 'http://localhost:43711/getPlayersNames') {
 
           // Append the node containing hidden to the paragraph and append that paragraph to the textbox parent (which is the table data tag. Thus replacing the input box with the words hidden).
           paragraph.appendChild(node);
-          textBoxParentNode.removeChild(textBoxName);
+          textBoxParentNode.appendChild(paragraph);
         }
       }
       // Clicking a checkbox that is checked already.
@@ -125,6 +125,7 @@ if (window.location.href === 'http://localhost:43711/getPlayersNames') {
           // Get the text box input element, text box parent, and paragraph.
           textBox = document.getElementById(textBoxName);
           textBoxParentNode = document.getElementById(textBoxName).parentNode;
+          console.log(textBoxParentNode);
           paragraph = document.getElementById(paragraphName);
 
           // Set the input type to text and it's value to false. Thus re-shwoing the input box and setting the check box value to false (unchecked state).
