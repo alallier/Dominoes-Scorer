@@ -1,4 +1,4 @@
-// extend global model provide additional useful vars at runtime and export it
+// Game Modes
 module.exports = function() {
 	var gameModes = [
         {

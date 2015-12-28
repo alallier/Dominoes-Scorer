@@ -1,4 +1,4 @@
-// sample static global base model
+// Sample static global base model
 var model = {
   content: {
     appTitle: 'Chicken Foot Dominoes',
@@ -6,14 +6,14 @@ var model = {
   }
 };
 
-// extend global model provide additional useful vars at runtime and export it
+// Extend global model provide additional useful vars at runtime and export it
 module.exports = function(req, res) {
   return {
 
-    // always static
+    // Always static
     content: model.content,
     
-    // recalculated each require
+    // Recalculated each require
     currentYear: new Date().getFullYear(),
     mainDomain: req.headers['x-forwarded-host'] || req.headers.host,
     NODE_ENV: process.env.NODE_ENV

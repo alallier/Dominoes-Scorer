@@ -1,4 +1,4 @@
-// Domino set size like a double 6, or double 9
+// Domino set size like a double 6, or double 9.
 module.exports = function() {
 	var dominoSizeSet = [
         {

@@ -3,17 +3,17 @@ module.exports = function(app) {
   app.post('/arcadePlayMode', function(req, res) {
     var model = require('models/global')(req, res),
         i;
-    
-    // Since this is recursive we have to send the item found on the original page again
+
+    // Since this is recursive we have to send the item found on the original page again.
     model.playerCount = require('models/getPlayerCount')();
     model.size = model.playerCount.length;
     model.dominoSetSize = require('models/getDominoSetSize')();
-    
+
     model.numberOfPlayers = req.body.numberOfPlayers;
     model.numberOfPlayersArray = [];
-    
+
     model.dominoSetSizePost = req.body.dominoSetSize;
-    
+
     for (i = 0; i < model.numberOfPlayers; i++) {
       model.numberOfPlayersArray.push(i);
     }
@@ -24,21 +24,21 @@ module.exports = function(app) {
   app.post('/quickPlayMode', function(req, res) {
     var model = require('models/global')(req, res),
         i;
-    
-    // Since this is recursive we have to send the item found on the original page again
+
+    // Since this is recursive we have to send the item found on the original page again.
     model.playerCount = require('models/getPlayerCount')();
     model.size = model.playerCount.length;
     model.dominoSetSize = require('models/getDominoSetSize')()
-    
+
     model.numberOfPlayers = req.body.numberOfPlayers;
     model.numberOfPlayersArray = [];
-    
+
     model.dominoSetSizePost = req.body.dominoSetSize;
-    
+
     for (i = 0; i < model.numberOfPlayers; i++) {
       model.numberOfPlayersArray.push(i);
     }
-    
+
     model.pageDescription = 'Select the number of players below and start playing.';
     res.render('quickPlayMode', model);
   });
