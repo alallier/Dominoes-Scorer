@@ -10,7 +10,8 @@ if (window.location.href === 'http://localhost:43711/getPlayersNames') {
   // Event listener to listen all clicks on the page. (Right now handling hideScore and submitRound checkboxes).
   document.addEventListener('click', function (e) {
     var checkingHideScore = '',
-        checkingFinal = '';
+        checkingFinal = '',
+        checkingSubmit = '';
 
     // Split the target element so we can check to see what was clicked.
     hideScoreSplit = e.target.id.split('');
@@ -23,6 +24,48 @@ if (window.location.href === 'http://localhost:43711/getPlayersNames') {
     // Check to see if final score check box before going any further
     for (i = 0; i < 5; i++) {
       checkingFinal += hideScoreSplit[i];
+    }
+
+    // Check to see if submit round check box before going any further
+    for (i = 0; i < 6; i++) {
+      checkingSubmit += hideScoreSplit[i];
+    }
+
+    // Check if the click action was on the submit round.
+    if (checkingSubmit === 'submit') {
+
+      // Get the round number from the split.
+      round = hideScoreSplit[11];
+
+      // Clicking a checkbox that is unchecked.
+      if (e.target.value === 'false') {
+        for (j = 0; j < nubmerOfPlayers; j++) {
+
+          // Dynamically populate the oldParagraphName and newParagraphName.
+          textBoxName = ['player' + j + 'Round' + round];
+
+          // Get the score input box
+          textBox = document.getElementById(textBoxName);
+
+          // Disable the input field for the score and set the checkbox to true (checked).
+          textBox.disabled = true;
+          e.target.setAttribute('value', 'true');
+        }
+      }
+      else {
+        for (j = 0; j < nubmerOfPlayers; j++) {
+          
+          // Dynamically populate the oldParagraphName and newParagraphName.
+          textBoxName = ['player' + j + 'Round' + round];
+
+          // Get the score input box
+          textBox = document.getElementById(textBoxName);
+
+          // Enable the input field for the score and set the checkbox to false (unchecked).
+          textBox.disabled = false;
+          e.target.setAttribute('value', 'false');
+        }
+      }
     }
 
     // Check if the click action was in the final score round.
