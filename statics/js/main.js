@@ -6,7 +6,7 @@ document.body.style.backgroundColor = '#eee';
 
 // Automatic Scoring Below
 //This if check is temporary fix, it needs a better solution
-if (window.location.href === 'http://localhost:43711/getPlayersNames') {
+if (window.location.pathname === '/getPlayersNames') {
   // Event listener to listen all clicks on the page. (Right now handling hideScore and submitRound checkboxes).
   document.addEventListener('click', function (e) {
     var checkingHideScore = '',
