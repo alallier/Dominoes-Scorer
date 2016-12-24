@@ -42,7 +42,7 @@ if (window.location.pathname === '/getPlayersNames') {
         for (j = 0; j < nubmerOfPlayers; j++) {
 
           // Dynamically populate the oldParagraphName and newParagraphName.
-          textBoxName = ['player' + j + 'Round' + round];
+          textBoxName = 'player' + j + 'Round' + round;
 
           // Get the score input box
           textBox = document.getElementById(textBoxName);
@@ -56,7 +56,7 @@ if (window.location.pathname === '/getPlayersNames') {
         for (j = 0; j < nubmerOfPlayers; j++) {
           
           // Dynamically populate the oldParagraphName and newParagraphName.
-          textBoxName = ['player' + j + 'Round' + round];
+          textBoxName = 'player' + j + 'Round' + round;
 
           // Get the score input box
           textBox = document.getElementById(textBoxName);
@@ -76,8 +76,8 @@ if (window.location.pathname === '/getPlayersNames') {
         for (j = 0; j < nubmerOfPlayers; j++) {
 
           // Dynamically populate the oldParagraphName and newParagraphName.
-          oldParagraphName = ['finalScorePlayer' + j];
-          newParagraphName = ['finalScorePlayer' + j + 'paragraph'];
+          oldParagraphName = 'finalScorePlayer' + j;
+          newParagraphName = 'finalScorePlayer' + j + 'paragraph';
 
           // Get the score paragraph and parent
           oldParagraph = document.getElementById(oldParagraphName);
@@ -105,8 +105,8 @@ if (window.location.pathname === '/getPlayersNames') {
         for (j = 0; j < nubmerOfPlayers; j++) {
 
           // Dynamically populate the oldParagraphName and newParagraphName.
-          oldParagraphName = ['finalScorePlayer' + j];
-          newParagraphName = ['finalScorePlayer' + j + 'paragraph'];
+          oldParagraphName = 'finalScorePlayer' + j;
+          newParagraphName = 'finalScorePlayer' + j + 'paragraph';
 
           // Get the old paragraph, new paragraph, and the parent of both input element and parent.
           oldParagraph = document.getElementById(oldParagraphName);
@@ -134,8 +134,8 @@ if (window.location.pathname === '/getPlayersNames') {
         for (j = 0; j < nubmerOfPlayers; j++) {
 
           // Dynamically populate the textBoxName and paragraphName.
-          textBoxName = ['player' + j + 'Round' + round];
-          paragraphName = ['paragrapghPlayer' + j + 'Round' + round];
+          textBoxName = 'player' + j + 'Round' + round;
+          paragraphName = 'paragrapghPlayer' + j + 'Round' + round;
 
           // Get the text box input element and parent
           textBox = document.getElementById(textBoxName);
@@ -162,8 +162,8 @@ if (window.location.pathname === '/getPlayersNames') {
         for (j = 0; j < nubmerOfPlayers; j++) {
 
           // Dynamically populate the textBoxName and paragraphName.
-          textBoxName = ['player' + j + 'Round' + round];
-          paragraphName = ['paragrapghPlayer' + j + 'Round' + round];
+          textBoxName = 'player' + j + 'Round' + round;
+          paragraphName = 'paragrapghPlayer' + j + 'Round' + round;
 
           // Get the text box input element, text box parent, and paragraph.
           textBox = document.getElementById(textBoxName);
@@ -194,7 +194,7 @@ if (window.location.pathname === '/getPlayersNames') {
     for (j = 0; j < nubmerOfPlayers; j++) {
       
       // Add event listeners to text input boxes.
-      textBoxName = ['player' + j + 'Round' + i];
+      textBoxName = 'player' + j + 'Round' + i;
       document.getElementById(textBoxName).addEventListener('input', sumValues);
     }
   }
@@ -212,7 +212,7 @@ if (window.location.pathname === '/getPlayersNames') {
       for (i = 0; i <= dominoSetSize; i++) {
 
         // Concatinate scoreTextElement before hand so we can loop through unique IDs.
-        scoreTextElement = ['player' + j + 'Round' + i];
+        scoreTextElement = 'player' + j + 'Round' + i;
 
         // Get a value from each input down a column.
         value = Number(document.getElementById(scoreTextElement).value);
@@ -220,7 +220,7 @@ if (window.location.pathname === '/getPlayersNames') {
         total += value;
 
         // Get the finalScorePlayer element uniquly.
-        finalScore = ['finalScorePlayer' + j];
+        finalScore = 'finalScorePlayer' + j;
         finalScore = document.getElementById(finalScore)
 
         // Empty finalScorePlayer element so we can rewrite it.
