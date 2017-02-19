@@ -13,15 +13,15 @@
   "engineStrict": true,
   "dependencies": {
     "body-parser": "^1.14.2",
-    "roosevelt": "^0.6.0",
-    "roosevelt-closure": "^0.2.0",
-    "roosevelt-less": "^0.2.0",
-    "teddy": "^0.3.0"
+    "roosevelt": "0.7.4",
+    "roosevelt-closure": "0.3.0",
+    "roosevelt-less": "0.2.6",
+    "teddy": "0.4.4"
   },
   "devDependencies": {
     "jshint": "*",
-    "supervisor": "*",
-    "reload": "*"
+    "supervisor": "0.12.0",
+    "reload": "1.1.1"
   },
   "rooseveltConfig": {
     "port": 43711,
@@ -84,7 +84,7 @@
   "scripts": {
     "start": "npm run prod",
     "prod": "supervisor -k -e js,json,less,html -i statics/.build/,public/ -- app.js -prod",
-    "dev": "supervisor -k -e js,json,less,html -i statics/.build/,public/ -- app.js -dev",
+    "dev": "supervisor -k -e js,json,less,html -i statics/.build/,public/,.git -RV -- app.js -dev",
     "test": "jshint app.js"
   }
 }
