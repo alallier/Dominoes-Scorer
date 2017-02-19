@@ -10,6 +10,10 @@ module.exports = function() {
           size: 9
         },
         {
+          title: 'Double Twelve',
+          size: 12
+        },
+        {
           title: 'Double Sixteen',
           size: 16
         }
