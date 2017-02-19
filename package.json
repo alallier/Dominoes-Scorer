@@ -83,7 +83,7 @@
   },
   "scripts": {
     "start": "npm run prod",
-    "prod": "supervisor -k -e js,json,less,html -i statics/.build/,public/ -- app.js -prod",
+    "prod": "supervisor -k -e js,json,less,html -i statics/.build/,public/,.git -- app.js -prod",
     "dev": "supervisor -k -e js,json,less,html -i statics/.build/,public/,.git -RV -- app.js -dev",
     "test": "jshint app.js"
   }
