@@ -55,7 +55,7 @@
     "jsCompiler": {
       "nodeModule": "roosevelt-closure",
       "params": {
-        "compilation_level": "ADVANCED_OPTIMIZATIONS"
+        "compilationLevel": "ADVANCED"
       }
     },
     "jsCompilerWhitelist": null,
